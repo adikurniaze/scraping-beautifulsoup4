@@ -25,10 +25,10 @@
     </li>
   </ul>
 </nav>
-<div class="container-fluid">
-    {% for image in images %}
+<div class="container-fluid" style="margin-top:80px; text-align:center">
+    {% for image in data %}
+  <a>-----------------------------------------------------</a>
     {{image|safe}}
-
     {% endfor %}
 </body>
 </div>
