@@ -15,8 +15,10 @@ def kompas_populer():
     populer_area = soup.find(attrs={'class': 'latest--indeks mt2 clearfix'})
     titles = populer_area.findAll(attrs={'class': 'article__list__title'})
     images = populer_area.findAll(attrs={'class': 'article__asset'})
+#    urls = populer_area.find(attrs={'class': 'article__link'})
     urls = populer_area.findAll(attrs={'class': 'article__link'})
-    return render_template('index.html', titles=titles, images=images)
+    data = populer_area.findAll(attrs={'class': 'article__list'})
+    return render_template('index.html', titles=titles, images=images, data=data, urls=urls)
 
 if __name__=='__main__':
     app.run(debug=True)
